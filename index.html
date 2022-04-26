@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="images/shortcut-icon.jpg" type="image/x-icon">
+	<meta name="description" content="Тестовое задание"> 
+	<meta name="keywords" content="тестовое задание idaproject"> 
+	<title>Тестовое задание idaproject</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<div class="add-product">
+		<h1>Добавление товара</h1>
+		<form action="javascript:void(0);">
+			<div>
+				<label for="name-product">Наименование товара</label>
+				<input type="text" name="name-product" placeholder="Введите наименование товара" />
+				<p id="nameProductWarning">Поле является обязательным</p>
+				<label for="description-product">Описание товара</label>
+				<input type="text" name="description-product" placeholder="Введите описание товара"/>
+				<label for="image-link-product">Ссылка на изображение товара</label>
+				<input type="text" name="image-link-product" placeholder="Введите ссылку"/>
+				<p id="imageLinkProductWarning">Поле является обязательным</p>
+				<label for="price-product">Цена товара</label>
+				<input type="text" name="price-product" placeholder="Введите цену"/>
+				<p id="priceProductWarning">Поле является обязательным</p>
+			</div>
+			<button>Добавить товар</button>
+		</form>
+	</div>
+
+	<div class="products">
+
+		<select>
+			<option value="default">По умолчанию</option>
+			<option value="min">По цене min</option>
+			<option value="max">По цене max</option>
+			<option value="name">По наименованию</option>
+		</select>
+
+		<div class="product-cards">
+
+			<div class="product-cards__card">
+				<img src="images/product-photo.jpg" alt="Фото товара">
+				<div>
+					<h2>Ваги</h2>
+					<p>Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк</p>
+					<p><span>19000</span> руб.</p>
+				</div>
+			</div>
+
+			<div class="product-cards__card">
+				<img src="images/product-photo.jpg" alt="Фото товара">
+				<div>
+					<h2>Бав</h2>
+					<p>Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк</p>
+					<p><span>15000</span> руб.</p>
+				</div>
+			</div>
+
+			<div class="product-cards__card">
+				<img src="images/product-photo.jpg" alt="Фото товара">
+				<div>
+					<h2>Аб</h2>
+					<p>Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк</p>
+					<p><span>14000</span> руб.</p>
+				</div>
+			</div>
+
+			<div class="product-cards__card">
+				<img src="images/product-photo.jpg" alt="Фото товара">
+				<div>
+					<h2>Гмаввс</h2>
+					<p>Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк</p>
+					<p><span>17000</span> руб.</p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
