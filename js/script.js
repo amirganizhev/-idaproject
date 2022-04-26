@@ -9,6 +9,14 @@ const priceProduct = document.querySelector('.add-product input[name="price-prod
 const nameProductWarning = document.querySelector('#nameProductWarning');
 const imageLinkProductWarning = document.querySelector('#imageLinkProductWarning');
 const priceProductWarning = document.querySelector('#priceProductWarning');
+
+/*Удаление прелодера*/
+window.onload = function() {
+	setTimeout(() => {
+		document.querySelector('.loader').remove();
+	}, 1500);
+};
+
 /*Добавление карточки товара*/
 document.querySelector('.add-product button').onclick = function() {
 	/*Валидация*/
