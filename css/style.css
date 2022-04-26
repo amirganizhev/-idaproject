@@ -1,0 +1,267 @@
+/*Общие стили*/
+body {
+	padding: 0px;
+	margin: 0px;
+	background-color: #FAF9F7;
+}
+
+/*Форма добавления товара*/
+.add-product {
+	width: 20%;
+	margin-left: 2%;
+	float: left;
+}
+
+.add-product form {
+	background-color: #FFFEFB;
+	padding: 5%;
+	box-shadow: 0px 5px 21px -9px rgba(34, 60, 80, 0.2);
+}
+
+.add-product div {
+	display: flex;
+	flex-direction: column;
+}
+
+.add-product label {
+	margin: 5% 0 2% 0;
+	font-size: 0.9em;
+}
+
+.add-product input {
+	box-shadow: 0px 1px 10px -2px rgba(34, 60, 80, 0.2);
+	border: none;
+	font-size: 0.9em;
+	padding: 0 5% 0 5%;
+	height: 3em;
+	border-radius: 5px;
+	outline: none;
+}
+
+.add-product input:focus {
+	box-shadow: 0px 1px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
+.add-product input[name="description-product"] {
+	height: 9em;
+}
+
+.add-product p {
+	color: red;
+	font-size: 0.6em;
+	display: none;
+}
+
+.add-product button {
+	box-shadow: 0px 5px 10px -8px rgba(34, 60, 80, 0.2);
+	background-color: #EEEEEE;
+	color: #B4B4B4;
+	width: 100%;
+	height: 3em;
+	border: none;
+	border-radius: 10px;
+	margin: 10% 0 10% 0;
+	cursor: pointer;
+}
+
+.add-product button:hover {
+	box-shadow: 0px 1px 10px 2px rgba(34, 60, 80, 0.2);
+	color: black;
+}
+
+/*Карточки товара*/
+.products {
+	float: right;
+	width: 76%;
+}
+
+.products select {
+	width: 12%;
+	height: 5vh;
+	margin: 1% 0 1% 84%;
+	text-align: center;
+	box-shadow: 0px 1px 10px -2px rgba(34, 60, 80, 0.2);
+	background-color: #FFFEFB;
+	border: none;
+	border-radius: 10px;
+	outline: none;
+	color: #A7A7A7;
+	cursor: pointer;
+}
+
+.products select:hover {
+	box-shadow: 0px 1px 10px 1px rgba(34, 60, 80, 0.2);
+}
+
+.product-cards {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.product-cards__card {
+	width: 30%;
+	height: auto;
+	margin: 0 3% 3% 0;
+	box-shadow: 0px 5px 21px -9px rgba(34, 60, 80, 0.2);
+	cursor: pointer;
+	border-radius: 15px;
+	background-color: #FFFEFB;
+}
+
+.product-cards__card:hover {
+	box-shadow: 0px 0px 20px 0px rgba(34, 60, 80, 0.2);
+}
+
+.product-cards__card img {
+	width: 100%;
+	height: 30vh;
+	border-radius: 15px 15px 0 0;
+}
+
+.product-cards__card div {
+	padding: 5%;
+	font-size: 1.2em;
+}
+
+.product-cards__card div span {
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.add-card-animation {
+    animation-name: add-card-animation;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes add-card-animation {
+    from {
+        position: relative;
+        left: -3%;
+        opacity: 0;
+    }
+    to {
+        left: 3%;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1400px) {
+	.add-product h1 {
+		font-size: 1.5em;
+	}
+	.add-product label {
+		font-size: 0.7em;
+	}
+	.add-product input {
+		font-size: 0.7em;
+	}
+	.add-product p {
+		font-size: 0.5em;
+	}
+	.add-product button {
+		font-size: 0.7em;
+	}
+	.products select {
+		font-size: 0.7em;
+		width: 20%;
+		height: auto;
+		margin: 2% 0 2% 76%;
+	}
+	.product-cards__card div {
+		font-size: 1em;
+	}
+}
+
+@media (max-width: 1100px) {
+	.add-product h1 {
+		font-size: 1em;
+	}
+	.add-product label {
+		font-size: 0.5em;
+	}
+	.add-product input {
+		font-size: 0.5em;
+	}
+	.add-product p {
+		font-size: 0.3em;
+	}
+	.add-product button {
+		font-size: 0.5em;
+	}
+	.products select {
+		font-size: 0.5em;
+	}
+	.product-cards__card div {
+		font-size: 0.6em;
+	}
+}
+
+@media (max-width: 700px) {
+	.add-product h1 {
+		font-size: 0.5em;
+	}
+	.add-product label {
+		font-size: 0.3em;
+	}
+	.add-product input {
+		font-size: 0.3em;
+		height: 2em;
+	}
+	.add-product input[name="description-product"] {
+		height: 6em;
+	}
+	.add-product p {
+		font-size: 0.2em;
+	}
+	.add-product button {
+		font-size: 0.3em;
+	}
+	.products select {
+		font-size: 0.3em;
+	}
+	.product-cards__card img {
+		height: 25vh;
+	}
+	.product-cards__card div {
+		font-size: 0.3em;
+	}
+	.product-cards__card div span {
+		font-size: 1em;
+	}
+}
+
+@media (max-width: 550px) {
+	.add-product {
+		width: 25%;
+	}
+	.add-product input {
+		font-size: 5px;
+		height: 3em;
+	}
+	.add-product input[name="description-product"] {
+		font-size: 5px;
+		height: 9em;
+	}
+	.add-product p {
+		font-size: 4px;
+	}
+	.products {
+		width: 71%;
+	}
+	.products select {
+		width: 30%;
+		margin: 2% 0 2% 64%;
+	}
+	.product-cards__card img {
+		height: 20vh;
+	}
+}
+
+.add-card-animation {
+    animation-name: add-card-animation;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
