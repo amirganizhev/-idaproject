@@ -7,6 +7,7 @@ const imageLinkProduct = document.querySelector('.add-product input[name="image-
 const priceProduct = document.querySelector('.add-product input[name="price-product"]');
 /*Предупреждения валидации*/
 const nameProductWarning = document.querySelector('#nameProductWarning');
+const descriptionProductWarning = document.querySelector('#descriptionProductWarning');
 const imageLinkProductWarning = document.querySelector('#imageLinkProductWarning');
 const priceProductWarning = document.querySelector('#priceProductWarning');
 
@@ -24,6 +25,10 @@ document.querySelector('.add-product button').onclick = function() {
     	nameProductWarning.style.display = 'block';
     	nameProduct.style.border = '1px solid red';
     	return false;
+    }	else if (descriptionProduct.value === '') {
+    		descriptionProductWarning.style.display = 'block';
+	    	descriptionProduct.style.border = '1px solid red';
+	    	return false;
     }	else if (imageLinkProduct.value === '') {
 	    	imageLinkProductWarning.style.display = 'block';
 	    	imageLinkProduct.style.border = '1px solid red';
@@ -35,6 +40,8 @@ document.querySelector('.add-product button').onclick = function() {
     } 	else {
 	    	nameProductWarning.style.display = 'none';
 	    	nameProduct.style.border = 'none';
+	    	descriptionProductWarning.style.display = 'none';
+	    	descriptionProduct.style.border = 'none';
 	    	imageLinkProductWarning.style.display = 'none';
 	    	imageLinkProduct.style.border = 'none';
 	    	priceProductWarning.style.display = 'none';
