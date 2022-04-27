@@ -15,6 +15,7 @@ let productCardArray;
 
 /*Удаление прелодера*/
 window.onload = function() {
+	productCards.innerHTML = localStorage.getItem('productCards_saved') || productCards.innerHTML;
 	setTimeout(() => {
 		document.querySelector('.loader').remove();
 	}, 1500);
@@ -65,6 +66,7 @@ document.querySelector('.add-product button').onclick = function() {
 									   <p><span>${priceProduct.value}</span> руб.</p>
 								   </div>
 							   </div>` + productCards.innerHTML;
+	localStorage.setItem('productCards_saved', productCards.innerHTML);						   
 	/*Очистка форм*/						   
 	nameProduct.value = '';
 	descriptionProduct.value = '';
