@@ -13,12 +13,14 @@ const priceProductWarning = document.querySelector('#priceProductWarning');
 /*Пустой массив*/
 let productCardArray;
 
-/*Удаление прелодера*/
 window.onload = function() {
-	productCards.innerHTML = localStorage.getItem('productCards_saved') || productCards.innerHTML;
+	/*Удаление прелодера*/
 	setTimeout(() => {
 		document.querySelector('.loader').remove();
 	}, 1500);
+	/*Переназначение карточек товара из localStorage*/
+	productCards.innerHTML = localStorage.getItem('productCards_saved') || productCards.innerHTML;
+	/*Удаление карточки товара*/
 	const productCardList = document.querySelectorAll('.product-cards__card');
 	for (let i = 0; i < productCardList.length; i++) {
 		productCardList[i].onclick = function() {
