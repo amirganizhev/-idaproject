@@ -19,6 +19,13 @@ window.onload = function() {
 	setTimeout(() => {
 		document.querySelector('.loader').remove();
 	}, 1500);
+	const productCardList = document.querySelectorAll('.product-cards__card');
+	for (let i = 0; i < productCardList.length; i++) {
+		productCardList[i].onclick = function() {
+			this.remove();
+			localStorage.setItem('productCards_saved', productCards.innerHTML);	
+		}
+	}
 };
 
 /*Добавление карточки товара*/
