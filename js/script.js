@@ -28,6 +28,23 @@ window.onload = function() {
 	}
 };
 
+/*Маска разделения тысячных пробелом для поля цены*/
+priceProduct.oninput = function() {
+	const value = this.value.replace(/\D/g, '');
+	const arrayValue = value.split('');
+	const arrayOverwrite = [];
+	let count = 0;
+	for (let i = arrayValue.length - 1; i >= 0; i--) {
+		if (count === 3) {
+			count = 0;
+			arrayOverwrite.unshift(' ');
+		}
+		arrayOverwrite.unshift(arrayValue[i])
+		count++;
+	}
+	this.value = arrayOverwrite.join('');
+}
+
 /*Добавление карточки товара*/
 document.querySelector('.add-product button').onclick = function() {
 	/*Валидация*/
@@ -94,7 +111,7 @@ document.querySelector('.products select').onchange = function(e) {
 	if (e.target.value === 'min') {
 		productCardArray = Array.prototype.slice.call(productCard, 0);
 		productCardArray.sort((a, b) => {
-			if (parseInt(a.querySelector('span').innerHTML) > parseInt(b.querySelector('span').innerHTML)) {
+			if (parseInt(a.querySelector('span').innerHTML.replace(/\D/g, '')) > parseInt(b.querySelector('span').innerHTML.replace(/\D/g, ''))) {
 				return 1;
 			} else {
 				return -1;
@@ -106,7 +123,7 @@ document.querySelector('.products select').onchange = function(e) {
 	if (e.target.value === 'max') {
 		productCardArray = Array.prototype.slice.call(productCard, 0);
 		productCardArray.sort((a, b) => {
-			if (parseInt(a.querySelector('span').innerHTML) < parseInt(b.querySelector('span').innerHTML)) {
+			if (parseInt(a.querySelector('span').innerHTML.replace(/\D/g, '')) < parseInt(b.querySelector('span').innerHTML.replace(/\D/g, ''))) {
 				return 1;
 			} else {
 				return -1;
