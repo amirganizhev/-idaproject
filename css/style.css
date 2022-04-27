@@ -149,8 +149,19 @@ body {
 	box-shadow: 0px 1px 10px 2px rgba(34, 60, 80, 0.2);
 }
 
-.add-product input[name="description-product"] {
+.add-product textarea {
 	height: 9em;
+	box-shadow: 0px 1px 10px -2px rgba(34, 60, 80, 0.2);
+	border: none;
+	font-size: 1.2em;
+	padding: 0 5% 0 5%;
+	border-radius: 5px;
+	outline: none;
+	resize: none;
+}
+
+.add-product textarea:focus {
+	box-shadow: 0px 1px 10px 2px rgba(34, 60, 80, 0.2);
 }
 
 .add-product p {
@@ -272,6 +283,9 @@ body {
 	.add-product input {
 		font-size: 0.7em;
 	}
+	.add-product textarea {
+		font-size: 0.9em;
+	}
 	.add-product p {
 		font-size: 0.5em;
 	}
@@ -299,6 +313,9 @@ body {
 	.add-product input {
 		font-size: 0.5em;
 	}
+	.add-product textarea {
+		font-size: 0.7em;
+	}
 	.add-product p {
 		font-size: 0.3em;
 	}
@@ -324,7 +341,8 @@ body {
 		font-size: 0.3em;
 		height: 2em;
 	}
-	.add-product input[name="description-product"] {
+	.add-product textarea {
+		font-size: 0.5em;
 		height: 6em;
 	}
 	.add-product p {
@@ -355,7 +373,7 @@ body {
 		font-size: 5px;
 		height: 3em;
 	}
-	.add-product input[name="description-product"] {
+	.add-product textarea {
 		font-size: 5px;
 		height: 9em;
 	}

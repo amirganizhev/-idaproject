@@ -2,7 +2,7 @@
 const productCards = document.querySelector('.product-cards');
 /*Формы для заполнения*/
 const nameProduct = document.querySelector('.add-product input[name="name-product"]');
-const descriptionProduct = document.querySelector('.add-product input[name="description-product"]');
+const descriptionProduct = document.querySelector('.add-product textarea');
 const imageLinkProduct = document.querySelector('.add-product input[name="image-link-product"]');
 const priceProduct = document.querySelector('.add-product input[name="price-product"]');
 /*Предупреждения валидации*/
