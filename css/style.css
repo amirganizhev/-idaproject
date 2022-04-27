@@ -253,6 +253,13 @@ body {
     animation-timing-function: linear;
 }
 
+.delete-card-animation {
+    animation-name: delete-card-animation;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
 /*Анимации*/
 @keyframes lds-roller {
     0% { transform: rotate(0); }
@@ -269,6 +276,16 @@ body {
     to {
         left: 3%;
         opacity: 1;
+    }
+}
+
+@keyframes delete-card-animation {
+    from {
+        position: relative;
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }
 

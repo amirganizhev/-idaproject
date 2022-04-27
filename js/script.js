@@ -21,13 +21,7 @@ window.onload = function() {
 	/*Переназначение карточек товара из localStorage*/
 	productCards.innerHTML = localStorage.getItem('productCards_saved') || productCards.innerHTML;
 	/*Удаление карточки товара*/
-	const productCardList = document.querySelectorAll('.product-cards__card');
-	for (let i = 0; i < productCardList.length; i++) {
-		productCardList[i].onclick = function() {
-			this.remove();
-			localStorage.setItem('productCards_saved', productCards.innerHTML);	
-		}
-	}
+	deleteProductCard();
 };
 
 /*Маска разделения тысячных пробелом для поля цены*/
@@ -102,7 +96,23 @@ document.querySelector('.add-product button').onclick = function() {
 		document.querySelector('.product-cards__card').classList.remove("add-card-animation");
 		localStorage.setItem('productCards_saved', productCards.innerHTML);
 		alert('Карточка товара добавлена')
-	}, 2000);		    				   
+	}, 2000);
+	/*Удаление карточки товара*/
+	deleteProductCard();		    				   
+}
+
+/*Удаление карточки товара*/
+function deleteProductCard() {
+	const productCardList = document.querySelectorAll('.product-cards__card');
+	for (let i = 0; i < productCardList.length; i++) {
+		productCardList[i].onclick = function() {
+			this.classList.add("delete-card-animation");
+			setTimeout(() => {
+				this.remove();
+				localStorage.setItem('productCards_saved', productCards.innerHTML);
+			}, 2000);	
+		}
+	}
 }
 
 /*Фильтрация товара*/
