@@ -12,7 +12,7 @@ const imageLinkProductWarning = document.querySelector('#imageLinkProductWarning
 const priceProductWarning = document.querySelector('#priceProductWarning');
 /*Пустой массив*/
 let productCardArray;
-
+//localStorage.clear();
 window.onload = function() {
 	/*Удаление прелодера*/
 	setTimeout(() => {
@@ -91,8 +91,7 @@ document.querySelector('.add-product button').onclick = function() {
 									   <p>${descriptionProduct.value}</p>
 									   <p><span>${priceProduct.value}</span> руб.</p>
 								   </div>
-							   </div>` + productCards.innerHTML;
-	localStorage.setItem('productCards_saved', productCards.innerHTML);						   
+							   </div>` + productCards.innerHTML;					   
 	/*Очистка форм*/						   
 	nameProduct.value = '';
 	descriptionProduct.value = '';
@@ -101,6 +100,7 @@ document.querySelector('.add-product button').onclick = function() {
 	/*Удаление анимации*/
 	setTimeout(function() {
 		document.querySelector('.product-cards__card').classList.remove("add-card-animation");
+		localStorage.setItem('productCards_saved', productCards.innerHTML);
 		alert('Карточка товара добавлена')
 	}, 2000);		    				   
 }
