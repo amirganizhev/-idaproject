@@ -73,6 +73,7 @@ document.querySelector('.add-product button').onclick = function() {
 	/*Удаление анимации*/
 	setTimeout(function() {
 		document.querySelector('.product-cards__card').classList.remove("add-card-animation");
+		alert('Карточка товара добавлена')
 	}, 2000);		    				   
 }
 
