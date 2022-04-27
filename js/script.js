@@ -10,6 +10,8 @@ const nameProductWarning = document.querySelector('#nameProductWarning');
 const descriptionProductWarning = document.querySelector('#descriptionProductWarning');
 const imageLinkProductWarning = document.querySelector('#imageLinkProductWarning');
 const priceProductWarning = document.querySelector('#priceProductWarning');
+/*Пустой массив*/
+let productCardArray;
 
 /*Удаление прелодера*/
 window.onload = function() {
@@ -25,28 +27,35 @@ document.querySelector('.add-product button').onclick = function() {
     	nameProductWarning.style.display = 'block';
     	nameProduct.style.border = '1px solid red';
     	return false;
-    }	else if (descriptionProduct.value === '') {
-    		descriptionProductWarning.style.display = 'block';
-	    	descriptionProduct.style.border = '1px solid red';
-	    	return false;
-    }	else if (imageLinkProduct.value === '') {
-	    	imageLinkProductWarning.style.display = 'block';
-	    	imageLinkProduct.style.border = '1px solid red';
-	    	return false;
-    }	else if (priceProduct.value === '') {
-	    	priceProductWarning.style.display = 'block';
-	    	priceProduct.style.border = '1px solid red';
-	    	return false;
-    } 	else {
-	    	nameProductWarning.style.display = 'none';
+    }	
+    	else {
+    		nameProductWarning.style.display = 'none';
 	    	nameProduct.style.border = 'none';
-	    	descriptionProductWarning.style.display = 'none';
+    	}
+    if (descriptionProduct.value === '') {
+		descriptionProductWarning.style.display = 'block';
+    	descriptionProduct.style.border = '1px solid red';
+    	return false;
+    }	else {
+    		descriptionProductWarning.style.display = 'none';
 	    	descriptionProduct.style.border = 'none';
-	    	imageLinkProductWarning.style.display = 'none';
+    	}
+    if (imageLinkProduct.value === '') {
+    	imageLinkProductWarning.style.display = 'block';
+    	imageLinkProduct.style.border = '1px solid red';
+    	return false;
+    }	else {
+    		imageLinkProductWarning.style.display = 'none';
 	    	imageLinkProduct.style.border = 'none';
+    	}
+    if (priceProduct.value === '') {
+    	priceProductWarning.style.display = 'block';
+    	priceProduct.style.border = '1px solid red';
+    	return false;
+    } 	else {
 	    	priceProductWarning.style.display = 'none';
 	    	priceProduct.style.border = 'none';
-    }
+    	}
 	/*Добавление карточки товара*/
 	productCards.innerHTML = `<div class="product-cards__card add-card-animation">
 								   <img src="${imageLinkProduct.value}" alt="Фото товара">
@@ -73,7 +82,7 @@ document.querySelector('.products select').onchange = function(e) {
 	productCard = document.querySelectorAll('.product-cards__card');
 	/*Фильтраци от меньшего к большему*/
 	if (e.target.value === 'min') {
-		let productCardArray = Array.prototype.slice.call(productCard, 0);
+		productCardArray = Array.prototype.slice.call(productCard, 0);
 		productCardArray.sort((a, b) => {
 			if (parseInt(a.querySelector('span').innerHTML) > parseInt(b.querySelector('span').innerHTML)) {
 				return 1;
@@ -85,7 +94,7 @@ document.querySelector('.products select').onchange = function(e) {
 	}
 	/*Фильтраци от большего к меньшему*/
 	if (e.target.value === 'max') {
-		let productCardArray = Array.prototype.slice.call(productCard, 0);
+		productCardArray = Array.prototype.slice.call(productCard, 0);
 		productCardArray.sort((a, b) => {
 			if (parseInt(a.querySelector('span').innerHTML) < parseInt(b.querySelector('span').innerHTML)) {
 				return 1;
@@ -97,7 +106,7 @@ document.querySelector('.products select').onchange = function(e) {
 	}
 	/*Фильтраци по наименованию*/
 	if (e.target.value === 'name') {
-		let productCardArray = Array.prototype.slice.call(productCard, 0);
+		productCardArray = Array.prototype.slice.call(productCard, 0);
 		productCardArray.sort((a, b) => {
 			if (a.querySelector('h2').innerHTML.toLowerCase() > b.querySelector('h2').innerHTML.toLowerCase()) {
 				return 1;
