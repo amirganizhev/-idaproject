@@ -79,7 +79,8 @@ document.querySelector('.add-product button').onclick = function() {
     	}
 	/*Добавление карточки товара*/
 	productCards.innerHTML = `<div class="product-cards__card add-card-animation">
-								   <img src="${imageLinkProduct.value}" alt="Фото товара">
+							       <img src="images/delete-icon.png" alt="Иконка удаления" class="delete-icon">
+								   <img src="${imageLinkProduct.value}" alt="Фото товара" class="product-image">
 								   <div>
 									   <h2>${nameProduct.value}</h2>
 									   <p>${descriptionProduct.value}</p>
@@ -95,7 +96,6 @@ document.querySelector('.add-product button').onclick = function() {
 	setTimeout(function() {
 		document.querySelector('.product-cards__card').classList.remove("add-card-animation");
 		localStorage.setItem('productCards_saved', productCards.innerHTML);
-		alert('Карточка товара добавлена')
 	}, 2000);
 	/*Удаление карточки товара*/
 	deleteProductCard();		    				   
