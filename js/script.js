@@ -12,7 +12,7 @@ const imageLinkProductWarning = document.querySelector('#imageLinkProductWarning
 const priceProductWarning = document.querySelector('#priceProductWarning');
 /*Пустой массив*/
 let productCardArray;
-//localStorage.clear();
+
 window.onload = function() {
 	/*Удаление прелодера*/
 	setTimeout(() => {
