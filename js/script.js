@@ -96,7 +96,7 @@ document.querySelector('.add-product button').onclick = function() {
 	setTimeout(function() {
 		document.querySelector('.product-cards__card').classList.remove("add-card-animation");
 		localStorage.setItem('productCards_saved', productCards.innerHTML);
-	}, 2000);
+	}, 1000);
 	/*Удаление карточки товара*/
 	deleteProductCard();		    				   
 }
@@ -114,7 +114,7 @@ function deleteProductCard() {
 				setTimeout(() => {
 					productCardList[i].remove();
 					localStorage.setItem('productCards_saved', productCards.innerHTML);
-				}, 2000);	
+				}, 1000);	
 			}
 		}
 		productCardList[i].onmouseout = function() {

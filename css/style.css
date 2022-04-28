@@ -259,14 +259,14 @@ body {
 
 .add-card-animation {
     animation-name: add-card-animation;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-iteration-count: 1;
     animation-timing-function: linear;
 }
 
 .delete-card-animation {
     animation-name: delete-card-animation;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-iteration-count: 1;
     animation-timing-function: linear;
 }
