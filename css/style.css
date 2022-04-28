@@ -391,9 +391,14 @@ body {
 	.products select {
 		font-size: 0.3em;
 	}
+	.product-cards__card {
+		width: 45%;
+		margin: 0 5% 5% 0;
+	}
 	.product-cards__card .delete-icon {
 		width: 15px;
 		height: 15px;
+		margin-left: 33%;
 	}
 	.product-cards__card .product-image {
 		height: 20vh;
@@ -429,7 +434,7 @@ body {
 		margin: 2% 0 2% 64%;
 	}
 	.product-cards__card .delete-icon {
-		margin-left: 19%;
+		margin-left: 30%;
 	}
 	.product-cards__card .product-image {
 		height: 20vh;
