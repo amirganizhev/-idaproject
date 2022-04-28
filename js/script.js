@@ -40,7 +40,7 @@ priceProduct.oninput = function() {
 	}
 	this.value = arrayOverwrite.join('');
 }
-//localStorage.clear();
+
 /*Добавление карточки товара*/
 document.querySelector('.add-product button').onclick = function() {
 	/*Валидация*/
@@ -105,13 +105,20 @@ document.querySelector('.add-product button').onclick = function() {
 function deleteProductCard() {
 	const productCardList = document.querySelectorAll('.product-cards__card');
 	for (let i = 0; i < productCardList.length; i++) {
-		productCardList[i].querySelector('.delete-icon').onclick = function() {
-			this.remove();
-			productCardList[i].classList.add("delete-card-animation");
-			setTimeout(() => {
-				productCardList[i].remove();
-				localStorage.setItem('productCards_saved', productCards.innerHTML);
-			}, 2000);	
+		productCardList[i].onmouseover = function() {
+			const deleteIcon = this.querySelector('.delete-icon');
+			deleteIcon.style.display = 'block';
+			deleteIcon.onclick = function() {
+				this.remove();
+				productCardList[i].classList.add("delete-card-animation");
+				setTimeout(() => {
+					productCardList[i].remove();
+					localStorage.setItem('productCards_saved', productCards.innerHTML);
+				}, 2000);	
+			}
+		}
+		productCardList[i].onmouseout = function() {
+			this.querySelector('.delete-icon').style.display = 'none';
 		}
 	}
 }
